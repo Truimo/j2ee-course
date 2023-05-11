@@ -1,2 +1,3 @@
-# javaee-course
-JavaEE 课程作业仓库
+# JavaEE Course - ebook
+
+JavaEE 课程作业项目仓库
