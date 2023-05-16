@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="/assets/normalize/normalize.css">
+    <link rel="stylesheet" href="/assets/element-ui/theme-chalk/index.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+</head>
+<body>
+<el-container id="app">
+    <el-header>
+        <el-row type="flex" justify="center">
+            <el-col :span="1">
+                <div class="grid-content bg-purple"></div>
+            </el-col>
+            <el-col :span="3">
+                <div class="grid-content bg-purple"><img src="/assets/images/logo.png" alt="logo"></div>
+            </el-col>
+            <el-col :span="1"></el-col>
+            <el-col :span="2">
+                <div class="grid-content bg-purple-light">
+                    <el-link type="info" href="/books/bookType/经典文学">首页</el-link>
+                </div>
+            </el-col>
+            <el-col :span="3">
+                <div class="grid-content bg-purple">
+                    <el-link type="info" href="/books/bookType/经典文学">经典文学</el-link>
+                </div>
+            </el-col>
+            <el-col :span="3">
+                <div class="grid-content bg-purple-light">
+                    <el-link type="info" href="/books/bookType/经典文学">经典文学</el-link>
+                </div>
+            </el-col>
+            <el-col :span="3">
+                <div class="grid-content bg-purple">
+                    <el-link type="info" href="/books/bookType/经典文学">经典文学</el-link>
+                </div>
+            </el-col>
+            <el-col :span="5">
+                <div class="grid-content bg-purple-light"></div>
+            </el-col>
+            <el-col :span="3">
+                <div v-if="isLogined" class="grid-content bg-purple-light">
+                    <el-dropdown>
+                        <el-avatar src="/assets/images/avatars/040601.jpg"></el-avatar>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item icon="el-icon-setting"><label @click="setting()">个人中心</label></el-dropdown-item>
+                            <el-dropdown-item icon="el-icon-circle-close"><label @click="exit()">退出登录</label></el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                </div>
+                <div v-else class="grid-content bg-purple-light">
+                    <el-button round @click="showLogWin()" size="mini">登录</el-button>
+                    <el-button round @click="showRegWin()" size="mini">注册</el-button>
+                </div>
+            </el-col>
+            <el-col :span="1">
+                <div class="grid-content bg-purple-light"></div>
+            </el-col>
+        </el-row>
+    </el-header>
+
+    <el-dialog title="登录对话框" :visible.sync="isLogDialogWin">
+        
+    </el-dialog>
+</el-container>
+<script src="/assets/vue/vue.js"></script>
+<script src="/assets/element-ui/index.js"></script>
+<script type="text/javascript">
+    const app = new Vue({
+        el: '#app',
+        data: {
+            isLogined: false,
+            isLogDialogWin: false,
+        },
+        methods: {
+            showLogWin() {  // 登录对话框
+                this.isLogDialogWin = true;
+            },
+            showRegWin() {  // 注册对话框
+
+            },
+            setting() {
+
+            },
+            exit() {
+
+            }
+        }
+    });
+</script>
+</body>
+</html>

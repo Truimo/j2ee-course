@@ -1,0 +1,10 @@
+.el-container {
+    margin:0 auto;
+    width: 1500px
+}
+
+.el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
+}
