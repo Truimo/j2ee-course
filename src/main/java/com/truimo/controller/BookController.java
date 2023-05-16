@@ -30,9 +30,9 @@ public class BookController {
     @PostMapping
     public ResponseEntity<ResultResponse<String>> addBook(@RequestBody @Validated AddBookDto addBookDto) {
         Book book = new Book();
-        book.setName(addBookDto.getName());
-        book.setPress(addBookDto.getPress());
-        book.setAuthor(addBookDto.getAuthor());
+        book.setBook_title(addBookDto.getName());
+        book.setBook_format(addBookDto.getPress());
+        book.setBook_author(addBookDto.getAuthor());
         int i = bookService.addBook(book);
         if (i > 0) {
             return ResponseEntity.ok(new ResultResponse<String>(ResultCode.ADD_SUCCESS));
