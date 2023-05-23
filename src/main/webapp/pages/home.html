@@ -93,6 +93,9 @@
             </el-form-item>
         </el-form>
     </el-dialog>
+    <el-dialog title="注册对话框" :visible.sync="isRegDialogWin">
+
+    </el-dialog>
 </el-container>
 <script src="/assets/vue/vue.js"></script>
 <script src="/assets/element-ui/index.js"></script>
@@ -102,6 +105,7 @@
         data: {
             isLogined: false,
             isLogDialogWin: false,
+            isRegDialogWin: false,
             sigForm: {
                 user: '',
                 password: '',
@@ -123,7 +127,7 @@
 
             },
             showRegWin() {  // 注册对话框
-
+                this.isRegDialogWin = true;
             },
             validateUser() {
 
